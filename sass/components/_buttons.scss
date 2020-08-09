@@ -1,0 +1,291 @@
+.btn{
+    &,
+    &:link,
+    &:visited{
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 10rem;
+        padding: 1.5rem 4.0rem;
+        transition: all .2s;
+        position: relative;
+        font-size: 1.6rem;
+
+        //for book  button<button>
+        border: none;
+        cursor: pointer;
+    }
+    &:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 1.0rem 2.0rem rgba($color-black, .2);
+
+        &::after{
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+
+    }
+    &:active,&:focus{
+        outline: none;
+        transform: translateY(-1px);
+        box-shadow:0 .5rem 1.0rem rgba($color-black, .2);
+
+    }
+    &--white{
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        &::after{
+            background-color: $color-white;
+        }
+    }
+
+    &--green{
+        color: $color-white;
+        background-color: $color-primary;
+
+        &::after{
+            background-color: $color-primary;
+        }
+    }
+    &--package{
+        color: transparent;
+        background-color: transparent;
+        padding: 0;
+        border-radius: none;
+        &::after{
+            background-color: transparent;
+        }
+    }
+
+    &--card-detail{
+        color: $color-grey-dark;
+        background-color: $color-grey-light-1;
+
+        &::after{
+            background-color: $color-grey-light-1;
+        }
+    }
+
+    &--detail{
+        color: $color-white;
+        //background-color: $color-primary;
+
+        &::after{
+            background-color: $color-primary;
+        }
+    }
+    &::after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10.0rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all 0.4s;
+    }
+    
+    &--animated{
+        animation: moveInBottom 0.5s ease-out 0.75s;
+        animation-fill-mode: backwards;
+    }
+} 
+.btn-text{
+    &:link,&:visited{
+    text-decoration: none;
+    font-size: $default-font-size;
+    display: inline-block;
+    color: $color-primary;
+    border-bottom: .1rem solid $color-primary;
+    padding: .3rem;    
+    transition: all .2s;
+    }
+   
+    &:hover{
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-.2rem);;
+    }
+    &:active{
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
+    }
+}
+.btn-text-white{
+    &:link,&:visited{
+    text-decoration: none;
+    font-size: $default-font-size;
+    display: inline-block;
+    color: $color-white;
+    border-bottom: .1rem solid $color-white;
+    padding: .3rem;    
+    transition: all .2s;
+    }
+   
+    &:hover{
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-.2rem);;
+    }
+    &:active{
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
+    }
+}
+/***for search bar in connect us page***/////
+/*
+.tb
+{
+    display: table;
+    width: 100%;
+}
+
+.td
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+input, button
+{
+    color: $color-white;
+    font-family: 'Lato',sans-serif;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+#cover
+{
+    //position: absolute;
+    //top: 50%;
+    //left: 0;
+    //right: 0;
+    width: 80rem;
+    padding: 3.5rem;
+    //margin: -83px auto 0 auto;
+    background-image: linear-gradient(to right bottom,rgba( $color-tertiary-light,.85), rgba($color-primary-dark,.85));
+    border-radius: 10rem;
+    box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
+    transform: scale(0.6);
+}
+
+form
+{
+    height: 8.0rem;
+}
+
+input[type="text"]
+{
+    width: 100%;
+    height: 96px;
+    font-size: 4rem;
+    line-height: 1;
+}
+
+input[type="text"]::placeholder
+{
+    color: $color-grey-dark;
+    font-family: 'Lato',sans-serif;
+}
+
+#s-cover
+{
+    width: 1px;
+    padding-left: 35px;
+}
+
+button
+{
+    position: relative;
+    display: block;
+    width: 84px;
+    height: 96px;
+    cursor: pointer;
+}
+
+#s-circle
+{
+    position: relative;
+    top: -8px;
+    left: 0;
+    width: 43px;
+    height: 43px;
+    margin-top: 0;
+    border-width: 15px;
+    border: 15px solid #fff;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: 0.5s ease all;
+}
+
+button span
+{
+    position: absolute;
+    top: 68px;
+    left: 43px;
+    display: block;
+    width: 45px;
+    height: 15px;
+    background-color: transparent;
+    border-radius: 10px;
+    transform: rotateZ(52deg);
+    transition: 0.5s ease all;
+}
+
+button span:before, button span:after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    transform: rotateZ(0);
+    transition: 0.5s ease all;
+}
+
+#s-cover:hover #s-circle
+{
+    top: -1px;
+    width: 67px;
+    height: 15px;
+    border-width: 0;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+#s-cover:hover span
+{
+    top: 50%;
+    left: 56px;
+    width: 25px;
+    margin-top: -9px;
+    transform: rotateZ(0);
+}
+
+#s-cover:hover button span:before
+{
+    bottom: 11px;
+    transform: rotateZ(52deg);
+}
+
+#s-cover:hover button span:after
+{
+    bottom: -11px;
+    transform: rotateZ(-52deg);
+}
+#s-cover:hover button span:before, #s-cover:hover button span:after
+{
+    right: -6px;
+    width: 40px;
+    background-color: #fff;
+}*/

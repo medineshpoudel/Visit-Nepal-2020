@@ -1,0 +1,27 @@
+//for grid///////////////////
+@mixin clearfix{
+    &::after{
+        content: "";
+        display: table;
+        clear: both;
+    } 
+}
+///////////////MEDIA Query MANAGER
+//1 rem =16 px; default
+@mixin respond ($breakpoint){
+    @if $breakpoint == phone { //600px
+        @media (max-width: 37.5rem){ @content}; 
+    }
+
+    @if $breakpoint == tab-port { //900px
+        @media (max-width: 56.25rem){ @content}; 
+    }
+
+    @if $breakpoint == tab-land { //1200px
+        @media (max-width: 75rem){ @content}; 
+    }
+
+    @if $breakpoint == big-desktop { //1800
+        @media (min-width: 112.5rem){ @content}; 
+    }
+}
